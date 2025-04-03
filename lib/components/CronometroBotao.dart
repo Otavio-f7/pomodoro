@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 class Cronometrobotao extends StatelessWidget {
   final String text;
   final IconData icone;
-  const Cronometrobotao({super.key, required this.text, required this.icone});
+  final void Function()? click;
+  const Cronometrobotao({super.key, required this.text, required this.icone, this.click});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      onPressed: (){}, 
+      onPressed: click, 
       icon: Icon(icone),
       label: Text(
         text,
