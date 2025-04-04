@@ -41,19 +41,19 @@ mixin _$PomodoroStore on _PomodoroStore, Store {
     });
   }
 
-  late final _$segunddosAtom =
-      Atom(name: '_PomodoroStore.segunddos', context: context);
+  late final _$segundosAtom =
+      Atom(name: '_PomodoroStore.segundos', context: context);
 
   @override
-  int get segunddos {
-    _$segunddosAtom.reportRead();
-    return super.segunddos;
+  int get segundos {
+    _$segundosAtom.reportRead();
+    return super.segundos;
   }
 
   @override
-  set segunddos(int value) {
-    _$segunddosAtom.reportWrite(value, super.segunddos, () {
-      super.segunddos = value;
+  set segundos(int value) {
+    _$segundosAtom.reportWrite(value, super.segundos, () {
+      super.segundos = value;
     });
   }
 
@@ -86,6 +86,22 @@ mixin _$PomodoroStore on _PomodoroStore, Store {
   set tempoDesncaso(int value) {
     _$tempoDesncasoAtom.reportWrite(value, super.tempoDesncaso, () {
       super.tempoDesncaso = value;
+    });
+  }
+
+  late final _$tipoIntervaloAtom =
+      Atom(name: '_PomodoroStore.tipoIntervalo', context: context);
+
+  @override
+  TipoIntervalo get tipoIntervalo {
+    _$tipoIntervaloAtom.reportRead();
+    return super.tipoIntervalo;
+  }
+
+  @override
+  set tipoIntervalo(TipoIntervalo value) {
+    _$tipoIntervaloAtom.reportWrite(value, super.tipoIntervalo, () {
+      super.tipoIntervalo = value;
     });
   }
 
@@ -174,9 +190,10 @@ mixin _$PomodoroStore on _PomodoroStore, Store {
     return '''
 iniciado: ${iniciado},
 minutos: ${minutos},
-segunddos: ${segunddos},
+segundos: ${segundos},
 tempoTrabalho: ${tempoTrabalho},
-tempoDesncaso: ${tempoDesncaso}
+tempoDesncaso: ${tempoDesncaso},
+tipoIntervalo: ${tipoIntervalo}
     ''';
   }
 }
